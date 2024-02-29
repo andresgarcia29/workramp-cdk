@@ -1,14 +1,14 @@
 import * as cdk from "aws-cdk-lib";
 import { Construct } from "constructs";
-import { NetworkContructProps } from "./interfaces/network";
-import { NetworkConstruct } from "./contructs/network";
-import { BastionConstruct } from "./contructs/bastian";
+import { NetworkContsructProps } from "./interfaces/network";
+import { NetworkConstruct } from "./constructs/network";
+import { BastionConstruct } from "./constructs/bastian";
 
 export class WorkrampCdkStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    const networkContructProps: NetworkContructProps = {
+    const NetworkContsructProps: NetworkContsructProps = {
       VpcCidrBlock: "10.1.0.0/16",
       PublicSubnets: [
         {
@@ -43,7 +43,7 @@ export class WorkrampCdkStack extends cdk.Stack {
     const networkContruct = new NetworkConstruct(
       this,
       "NetworkContruct",
-      networkContructProps
+      NetworkContsructProps
     );
     new BastionConstruct(this, "BastionConstruct", {
       vpc: networkContruct.VPC,

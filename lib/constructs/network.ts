@@ -13,7 +13,7 @@ import {
 } from "aws-cdk-lib/aws-ec2";
 import { Construct } from "constructs";
 
-import { NetworkContructProps } from "../interfaces/network";
+import { NetworkContsructProps } from "../interfaces/network";
 import { SetName } from "../helper/helper";
 
 export class NetworkConstruct extends Construct {
@@ -21,7 +21,7 @@ export class NetworkConstruct extends Construct {
   public readonly PublicSubnets: PublicSubnet[];
   public readonly PrivateSubnets: PrivateSubnet[];
 
-  constructor(scope: Construct, id: string, props: NetworkContructProps) {
+  constructor(scope: Construct, id: string, props: NetworkContsructProps) {
     super(scope, id);
 
     this.VPC = new Vpc(this, "general", {

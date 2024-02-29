@@ -3,7 +3,7 @@ export interface Subnet {
   zone: string;
 }
 
-export interface NetworkContructProps {
+export interface NetworkContsructProps {
   VpcCidrBlock: string;
   PublicSubnets: Subnet[];
   PrivateSubnets: Subnet[];
