@@ -1,7 +1,5 @@
 import * as cdk from "aws-cdk-lib";
 import { Construct } from "constructs";
-import { aws_ec2 as ec2 } from "aws-cdk-lib";
-import { RotationSchedule } from "aws-cdk-lib/aws-secretsmanager";
 import { NetworkContructProps } from "./interfaces/network";
 import { NetworkConstruct } from "./contructs/network";
 import { BastionConstruct } from "./contructs/bastian";
