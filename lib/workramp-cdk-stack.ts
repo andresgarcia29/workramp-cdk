@@ -40,17 +40,17 @@ export class WorkrampCdkStack extends cdk.Stack {
       ],
     };
 
-    const networkContruct = new NetworkConstruct(
+    const networkConstruct = new NetworkConstruct(
       this,
-      "NetworkContruct",
+      "NetworkConstruct",
       NetworkContsructProps
     );
     new BastionConstruct(this, "BastionConstruct", {
-      vpc: networkContruct.VPC,
+      vpc: networkConstruct.VPC,
       ec2Name: "bastion-host",
       instanceTypeName: "t2.micro",
       sshPort: "22",
-      publicSubnets: networkContruct.PublicSubnets,
+      publicSubnets: networkConstruct.PublicSubnets,
     });
   }
 }
